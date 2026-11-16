@@ -1,6 +1,6 @@
 {
   "name": "doksli-ocr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OCR KTP & NPWP Indonesia yang berjalan sepenuhnya di browser (onnxruntime-web). Foto tidak dikirim ke server.",
   "type": "module",
   "main": "./src/index.js",

@@ -218,7 +218,7 @@ sisi klien, misalnya di dalam `useEffect` atau komponen `"use client"`.
 {
   "imports": {
     "onnxruntime-web": "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.wasm.min.mjs",
-    "doksli-ocr": "https://cdn.jsdelivr.net/npm/doksli-ocr@0.1.0/src/index.js"
+    "doksli-ocr": "https://cdn.jsdelivr.net/npm/doksli-ocr@0.1.1/src/index.js"
   }
 }
 </script>

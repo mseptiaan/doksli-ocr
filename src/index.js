@@ -6,7 +6,10 @@ import { processedSize, scalePoints, autoCardSize, warpRGBA } from "./card.js";
 export { CONF_THRESHOLD, CARD_W, CARD_H };
 export { parseNik, checkKtp, checkNpwp } from "./parse.js";
 
-const DEFAULT_MODELS = new URL("../models/", import.meta.url).href;
+// Folder model bawaan paket. Sengaja bukan `new URL("../models/", import.meta.url)` dengan string literal:
+// Vite dan webpack menganggap pola itu impor aset dan gagal karena targetnya folder.
+const MODELS_DIR = "../models/";
+const defaultModels = () => new URL(MODELS_DIR, import.meta.url).href;
 
 /**
  * Muat model dan siapkan OCR. Panggil sekali, lalu pakai `recognize()` berkali-kali.
@@ -22,7 +25,7 @@ export async function createOcr(options = {}) {
   ort.env.wasm.numThreads = options.numThreads ??
     (globalThis.crossOriginIsolated ? Math.min(4, globalThis.navigator?.hardwareConcurrency || 1) : 1);
 
-  const base = options.modelBaseUrl ?? DEFAULT_MODELS;
+  const base = options.modelBaseUrl ?? defaultModels();
   const pipe = await Pipeline.load(base.endsWith("/") ? base : base + "/", options.onProgress ?? (() => {}),
     options.fetchOptions ?? {});
 
