@@ -1,0 +1,43 @@
+doksli-ocr
+Copyright 2026 Muhammad Septian
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+-------------------------------------------------------------------------------
+Third-party components and data
+-------------------------------------------------------------------------------
+
+models/det.onnx
+  PP-OCRv6 text detection model (tiny) from PaddleOCR, ONNX conversion distributed
+  by RapidOCR. Weights stored as INT8 (weight-only quantization) by doksli-ocr.
+  PaddleOCR: Copyright (c) PaddlePaddle Authors. Apache License 2.0.
+    https://github.com/PaddlePaddle/PaddleOCR
+  RapidOCR: Copyright (c) RapidAI. Apache License 2.0.
+    https://github.com/RapidAI/RapidOCR
+
+models/rec.onnx, models/rec_dict.txt
+  Fine-tuned from the PP-OCRv6 text recognition model (tiny) of PaddleOCR.
+  The character dictionary is PaddleOCR's ppocrv6_tiny_dict.txt.
+  PaddleOCR: Copyright (c) PaddlePaddle Authors. Apache License 2.0.
+
+models/corners.onnx
+  Card-corner model trained for doksli-ocr. Its backbone was initialized from the
+  torchvision MobileNetV3-Small ImageNet weights (torchvision: BSD 3-Clause License,
+  https://github.com/pytorch/vision).
+
+models/wilayah.csv
+  Codes and names of Indonesian administrative regions (provinsi, kabupaten/kota,
+  kecamatan, kelurahan/desa) following the Ministry of Home Affairs (Kemendagri) codes.
+  Compiled and owned by the doksli-ocr author; distributed under the same Apache License 2.0
+  as this project.
+
+src/parse.js (KPP list)
+  Names of Indonesian tax offices (Kantor Pelayanan Pajak) from the public directory
+  of the Directorate General of Taxes: https://www.pajak.go.id/daftar-unit-kerja
+
+src/parse.js (occupation list)
+  Occupation categories used on Indonesian identity cards (Dukcapil).
+
+onnxruntime-web (peer dependency, not bundled)
+  Copyright (c) Microsoft Corporation. MIT License.
+  https://github.com/microsoft/onnxruntime

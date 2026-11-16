@@ -1,0 +1,62 @@
+{
+  "name": "doksli-ocr",
+  "version": "0.1.0",
+  "description": "OCR KTP & NPWP Indonesia yang berjalan sepenuhnya di browser (onnxruntime-web). Foto tidak dikirim ke server.",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./models/*": "./models/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/",
+    "models/",
+    "examples/",
+    "NOTICE",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "test": "node --test test/",
+    "serve": "node examples/serve.mjs"
+  },
+  "peerDependencies": {
+    "onnxruntime-web": "^1.22.0"
+  },
+  "devDependencies": {
+    "onnxruntime-web": "1.22.0"
+  },
+  "keywords": [
+    "ocr",
+    "ktp",
+    "npwp",
+    "indonesia",
+    "e-ktp",
+    "kyc",
+    "onnx",
+    "onnxruntime-web",
+    "wasm",
+    "offline",
+    "privacy"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mseptiaan/doksli-ocr.git"
+  },
+  "homepage": "https://github.com/mseptiaan/doksli-ocr#readme",
+  "bugs": {
+    "url": "https://github.com/mseptiaan/doksli-ocr/issues"
+  },
+  "author": "Muhammad Septian",
+  "engines": {
+    "node": ">=18"
+  }
+}
